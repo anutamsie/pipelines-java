@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/anutammajumder/Testproject/_apis/build/status/anutamsie.pipelines-java?branchName=main)](https://dev.azure.com/anutammajumder/Testproject/_build/latest?definitionId=2&branchName=main)
+
 
 # Contributing
 
