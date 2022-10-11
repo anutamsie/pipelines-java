@@ -1,18 +1,10 @@
-resources:
-  pipelines:
-  - pipeline: SmartHotel
-    project: DevOpsProject
-    source: SmartHotel-CI
-    trigger:
-      branches:
-        include:
-        - releases/*
-        - main
-        exclude:
-        - topic/*
-      tags: 
-      - Verified
-      - Signed
-      stages:
-      - Production
-      - PreProduction
+stages:
+- stage: A
+  jobs:
+  - job: A1
+  - job: A2
+
+- stage: B
+  jobs:
+  - job: B1
+  - job: B2
