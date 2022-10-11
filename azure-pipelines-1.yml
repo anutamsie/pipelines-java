@@ -1,10 +1,9 @@
 stages:
-- stage: A
+- stage: Build
   jobs:
-  - job: A1
-  - job: A2
-
-- stage: B
-  jobs:
-  - job: B1
-  - job: B2
+  - job: BuildOnWindows
+    steps:
+    - Build
+  - job: BuildOnMac
+    steps:
+    - Build
