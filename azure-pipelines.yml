@@ -1,15 +1,8 @@
-trigger:
-- main
-
-pool: 
-  vmImage: ubuntu-latest
-
 jobs:
-- job: PreWork
+- job: MyJob
+  displayName: My First Job
+  continueOnError: true
+  workspace:
+    clean: outputs
   steps:
-  - script: "Do pre-work"
-
-- job: PostWork
-  pool: windows-latest
-  steps:
-  - script: "Do post-work using a different hosted image"
+  - script: echo My first job
