@@ -1,10 +1,10 @@
-stages:
-- stage: A
-  jobs:
-  - job: A1
-  - job: A2
-
-- stage: B
-  jobs:
-  - job: B1
-  - job: B2
+deployment: string        # instead of job keyword, use deployment keyword
+pool:
+  name: string
+  demands: string | [ string ]
+  environment: string
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - script: echo Hi!
