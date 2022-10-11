@@ -1,7 +1,7 @@
 jobs:
   - deployment: deploy
     pool:
-      vmImage: ubuntu-latest
+      vmImage: windows-latest
       workspace:
         clean: all
     environment: staging
