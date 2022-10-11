@@ -1,10 +1,5 @@
-deployment: string        # instead of job keyword, use deployment keyword
 pool:
-  name: string
-  demands: string | [ string ]
-  environment: string
-  strategy:
-    runOnce:
-      deploy:
-        steps:
-        - script: echo Hi!
+  name: myPrivateAgents    # your job runs on an agent in this pool
+  demands: agent.os -equals Windows_NT    # the agent must have this capability to run the job
+steps:
+- script: echo hello world
