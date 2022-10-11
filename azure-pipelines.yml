@@ -4,9 +4,12 @@ trigger:
 pool: 
   vmImage: ubuntu-latest
 
-stages:
-- stage: Test
-  jobs:
-  - job: TestWork
-    steps:
-    - script: "Do test work"
+jobs:
+- job: PreWork
+  steps:
+  - script: "Do pre-work"
+
+- job: PostWork
+  pool: windows-latest
+  steps:
+  - script: "Do post-work using a different hosted image"
