@@ -1,5 +1,18 @@
-pool:
-  name: myPrivateAgents    # your job runs on an agent in this pool
-  demands: agent.os -equals Windows_NT    # the agent must have this capability to run the job
-steps:
-- script: echo hello world
+resources:
+  pipelines:
+  - pipeline: SmartHotel
+    project: DevOpsProject
+    source: SmartHotel-CI
+    trigger:
+      branches:
+        include:
+        - releases/*
+        - main
+        exclude:
+        - topic/*
+      tags: 
+      - Verified
+      - Signed
+      stages:
+      - Production
+      - PreProduction
