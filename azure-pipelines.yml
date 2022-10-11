@@ -1,14 +1,7 @@
 jobs:
-  # track deployments on the environment
-- deployment: DeployWeb
-  displayName: deploy Web App
-  pool:
-    vmImage: ubuntu-latest
-  # creates an environment if it doesn't exist
-  environment: 'abcd'
-  strategy:
-    # default deployment strategy, more coming...
-    runOnce:
-      deploy:
-        steps:
-        - script: echo my first deployment
+  - deployment: deploy
+    pool:
+      vmImage: ubuntu-latest
+      workspace:
+        clean: all
+    environment: staging
