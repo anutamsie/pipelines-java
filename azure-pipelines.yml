@@ -4,5 +4,15 @@ trigger:
 pool: 
   vmImage: ubuntu-latest
 
-steps:
-- script: "Hello world!"
+stages:
+- stage: CI
+  jobs:
+  - job: CIWork
+    steps:
+    - script: "Do CI work"
+
+- stage: Test
+  jobs:
+  - job: TestWork
+    steps:
+    - script: "Do test work"
